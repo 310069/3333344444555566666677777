@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小龍的魔法書 V4</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #4a4e69;
+            --accent: #9a8c98;
+            --bg: #fdfaf6;
+            --magic-gold: #d4a373;
+        }
+
+        body { font-family: "Microsoft JhengHei", sans-serif; margin: 0; background: var(--bg); color: #333; overflow-x: hidden; }
+
+        header {
+            background: rgba(74, 78, 105, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { font-size: 1.4rem; font-weight: bold; letter-spacing: 1px; }
+        .nav { display: flex; list-style: none; }
+        .nav-item { margin-left: 20px; font-weight: bold; cursor: pointer; color: white; text-decoration: none; }
+        .nav-item:hover { color: var(--magic-gold); }
+
+        /* 輪播圖區塊 */
+        .hero-section { padding: 30px 0; background: #fff; }
+        .swiper { width: 90%; max-width: 850px; height: 450px; border-radius: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .swiper-slide { display: flex; align-items: center; justify-content: center; background: #fff; }
+        .swiper-slide img { width: 100%; height: 100%; object-fit: contain; }
+
+        /* 分類清單區塊 */
+        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
+        .category-title { 
+            font-size: 1.6rem; color: var(--primary); margin: 40px 0 20px; 
+            padding-left: 15px; border-left: 5px solid var(--magic-gold);
+        }
+
+        .report-list { display: grid; grid-template-columns: 1fr; gap: 15px; }
+        .report-item {
+            display: flex; background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-decoration: none; color: inherit;
+            transition: 0.3s; height: 110px;
+        }
+        .report-item:hover { transform: translateX(10px); box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
+        
+        .item-img { width: 110px; min-width: 110px; height: 110px; background: #eee; }
+        .item-img img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .item-content { padding: 15px 20px; display: flex; flex-direction: column; justify-content: center; }
+        .item-content h3 { margin: 0 0 5px; font-size: 1.1rem; color: #2c3e50; }
+        .item-content p { margin: 0; font-size: 0.85rem; color: #777; }
+        .item-link { font-size: 0.8rem; color: var(--magic-gold); margin-top: 5px; font-weight: bold; }
+
+        footer { text-align: center; padding: 40px; background: var(--primary); color: white; margin-top: 60px; }
+
+        @media (max-width: 600px) {
+            .swiper { height: 300px; }
+            .item-img { width: 80px; min-width: 80px; height: 80px; }
+            .report-item { height: 80px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">✨ 小龍的魔法書</div>
+    <div class="nav">
+        <a href="#self" class="nav-item">自主學習</a>
+        <a href="#explore" class="nav-item">探究</a>
+        <a href="#extend" class="nav-item">科目延伸</a>
+    </div>
+</header>
+
+<section class="hero-section" data-aos="fade-down">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/d/1BLQp_YwzvBMQ1EGHSptBdOSrSstkpBiq" alt="精選1"></div>
+            <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/d/1fcWpFNknNp4wrdjg6S929IdsBgVj3N-G" alt="精選2"></div>
+            <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/d/1mii-dhymV1mSH_chrA2lDDFfxR2egHvT" alt="精選3"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
+
+<div class="container">
+    
+    <h2 id="self" class="category-title" data-aos="fade-right">自主學習</h2>
+    <div class="report-list">
+        <a href="https://drive.google.com/file/d/1BLQp_YwzvBMQ1EGHSptBdOSrSstkpBiq/view" target="_blank" class="report-item" data-aos="fade-up">
+            <div class="item-img"><img src="https://lh3.googleusercontent.com/d/1BLQp_YwzvBMQ1EGHSptBdOSrSstkpBiq" alt="營養"></div>
+            <div class="item-content">
+                <h3>自主學習：營養學報告</h3>
+                <p>個人營養計畫與健康數據分析</p>
+                <span class="item-link">查看 PPT ➜</span>
+            </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1dpdQnM1cmcrcEXcJj23ksrtAhAP2ykDL/view" target="_blank" class="report-item" data-aos="fade-up">
+            <div class="item-img"><img src="https://lh3.googleusercontent.com/d/1dpdQnM1cmcrcEXcJj23ksrtAhAP2ykDL" alt="加工"></div>
+            <div class="item-content">
+                <h3>蔬果加工報告</h3>
+                <p>食品處理與實驗觀察紀錄</p>
+                <span class="item-link">查看 PPT ➜</span>
+            </div>
+        </a>
+    </div>
+
+    <h2 id="explore" class="category-title" data-aos="fade-right">探究</h2>
+    <div class="report-list">
+        <a href="https://drive.google.com/file/d/1U5uxjaKjWM4wWr4LtL9kmISBK7syRo3r/view" target="_blank" class="report-item" data-aos="fade-up">
+            <div class="item-img"><img src="https://lh3.googleusercontent.com/d/1U5uxjaKjWM4wWr4LtL9kmISBK7syRo3r" alt="探究"></div>
+            <div class="item-content">
+                <h3>探究與實作成果</h3>
+                <p>跨學科實驗與實證歷程</p>
+                <span class="item-link">查看 PPT ➜</span>
+            </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1UEbTnrr8-P9m-pIaAdYPeyREqC19w5kC/view" target="_blank" class="report-item" data-aos="fade-up">
+            <div class="item-img"><img src="https://lh3.googleusercontent.com/d/1UEbTnrr8-P9m-pIaAdYPeyREqC19w5kC" alt="骨牌"></div>
+            <div class="item-content">
+                <h3>高二骨牌比賽紀錄</h3>
+                <p>團隊协作與物理學實踐</p>
+                <span class="item-link">查看 PPT ➜</span>
+            </div>
+        </a>
+    </div>
+
+    <h2 id="extend" class="category-title" data-aos="fade-right">科目延伸</h2>
+    <div class="report-list">
+        <a href="https://drive.google.com/file/d/1mii-dhymV1mSH_chrA2lDDFfxR2egHvT/view" target="_blank" class="report-item" data-aos="fade-up">
+            <div class="item-img"><img src="https://lh3.googleusercontent.com/d/1mii-dhymV1mSH_chrA2lDDFfxR2egHvT" alt="生物"></div>
+            <div class="item-content">
+                <h3>選修生物 1</h3>
+                <p>生物核心知識的延伸學習</p>
+                <span class="item-link">查看 PPT ➜</span>
+            </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1fcWpFNknNp4wrdjg6S929IdsBgVj3N-G/view" target="_blank" class="report-item" data-aos="fade-up">
+            <div class="item-img"><img src="https://lh3.googleusercontent.com/d/1fcWpFNknNp4wrdjg6S929IdsBgVj3N-G" alt="英文戲劇"></div>
+            <div class="item-content">
+                <h3>英文戲劇專案</h3>
+                <p>語言表達與舞台藝術呈現</p>
+                <span class="item-link">查看 PPT ➜</span>
+            </div>
+        </a>
+        </div>
+
+</div>
+
+<footer>
+    ✨ 小龍的魔法書 | 2026 學習歷程作品集 ✨
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 1000 });
+    new Swiper('.swiper', {
+        loop: true,
+        autoplay: { delay: 3500 },
+        pagination: { el: '.swiper-pagination', clickable: true },
+        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    });
+</script>
+
+</body>
+</html>
